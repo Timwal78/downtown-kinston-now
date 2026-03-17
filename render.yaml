@@ -1,0 +1,20 @@
+# render.yaml — Deploy Downtown Kinston Now to Render
+# 1. Push this repo to GitHub
+# 2. Connect to Render → New Web Service → select repo
+# 3. Render auto-detects this file
+
+services:
+  - type: web
+    name: dkn-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: FRONTEND_URL
+        value: https://downtownkinston.com
+    healthCheckPath: /health
+    plan: free
