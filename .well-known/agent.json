@@ -1,0 +1,13 @@
+{
+  "name": "downtown-kinston-now",
+  "description": "Downtown Kinston NC community information platform",
+  "owner": "ScriptMasterLabs",
+  "github": "https://github.com/timwal78/downtown-kinston-now",
+  "contact": "scriptmasterlabs@gmail.com",
+  "sovereign": {
+    "noMockData": true,
+    "liveDataOnly": true,
+    "noTelemetry": true,
+    "enforcedBy": ".github/workflows/sovereign-data-check.yml"
+  }
+}
